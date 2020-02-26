@@ -35,7 +35,7 @@ normal use  :
 $ python3  main.py
 
 
-thank a lot for reading README.md...
-report a  bug , or send anything : azymiamin@gmail.com
+thank a lot for reading README.md.
+report a bug or send anything : azymiamin@gmail.com
 
 good luck !
