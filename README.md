@@ -36,6 +36,7 @@ $ python3  main.py
 
 
 thank a lot for reading README.md.
+<br>
 report a bug or send anything : azymiamin@gmail.com
 
 good luck !
