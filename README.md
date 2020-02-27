@@ -44,6 +44,6 @@ $ python3  main.py
 <br>
 thank a lot for reading README.md.
 <br>
-report a bug or send anything : azymiamin@gmail.com
+report a bug or send anything : amzy0zone@gmail.com
 <br>
 good luck !
