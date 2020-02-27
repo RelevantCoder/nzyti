@@ -46,22 +46,10 @@ print(" /____\___/|_| \_\___\____|_| |_|          /_/ ")
 os.system("sleep 0.5")
 print("  ________  ____  ___ ____ _   _           __  ")
 
-print(" |__  / _ \|  _ \|_ _/ ___| | | |_____ ____\ \ ")
 
-print("   / / | | | |_) || | |   | |_| |_____|_____\ \\")
-
-# get cmnd
-readline.parse_and_bind("tab: complete")
-readline.set_completer(completer)
-# prompt
-cmnd = input("==> ")
-
-print("  / /| |_| |  _ _ | | |___|  _  |_____|_____/ /")
-
-print(" /____\___/|_| \_\___\____|_| |_|          /_/ ")
 # load ended
 
-while cmnd != EOF :
+while True:
 
     # logo
 
