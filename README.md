@@ -11,9 +11,10 @@
 
 i wanna added very good features to this terminal and i promise to you  Zorich
 can handle all UNIX likes operating system with POSIX standard  , soon.
-you can add many features if you want . source code is yours :) .
+you can add many features if you want .
+source code is yours :) .
 if you wanna changing  Zorich please use GPL v3 .
-if you like the  Zorich , please give   star to this project and support this project,
+if you like the  Zorich , please give star to this project and support this project,
 send me your code  or  pull request and other ...
 if wanna help to Zorich project.
 
