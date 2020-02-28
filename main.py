@@ -8,7 +8,7 @@ import rlcompleter, readline
 # auto complete (arrow key (up & down))
 def completer(text, state):
 
-    options = [i for i in os.system("ls")  if i.startswith(text)]
+    options = [i for i in print("\n")+os.system("ls && echo ':: '") if i.startswith(text)]
     if state < len(options):
 
         return options
@@ -44,7 +44,6 @@ os.system("sleep 0.5")
 
 print(" /____\___/|_| \_\___\____|_| |_|          /_/ ")
 os.system("sleep 0.5")
-print("  ________  ____  ___ ____ _   _           __  ")
 
 
 # load ended
@@ -60,11 +59,11 @@ while True:
     print("   / / | | | |_) || | |   | |_| |_____|_____\ \\")
 
     # get cmnd
-    readline.parse_and_bind("tab: complete")
     readline.set_completer(completer)
-    # prompt
+    readline.parse_and_bind("tab: complete")
     cmnd = input("==> ")
-
+    # prompt
+    cmnd = cmnd.strip()
     print("  / /| |_| |  _ _ | | |___|  _  |_____|_____/ /")
 
     print(" /____\___/|_| \_\___\____|_| |_|          /_/ ")
@@ -76,7 +75,7 @@ while True:
             os.chdir(".")
             os.system("pwd")
             continue
-        if cmnd == "cd" or cmnd == "cd ":
+        if cmnd[1:] == "cd" or cmnd == "cd ":
             os.chdir(os.path.expanduser("~"))
             os.system("pwd")
             continue
@@ -86,7 +85,7 @@ while True:
             os.system("pwd")
             continue
 
-        elif "~" in cmnd:
+        elif "~" in cmnd or cmnd[3:] == "":
             os.chdir(os.path.expanduser("~"))
             os.system("pwd")
             continue
@@ -113,17 +112,15 @@ while True:
         print("=============================\n")
 
         continue
+    elif(int(os.system(cmnd))!= 0):
+
+# if not cmnd TRUE print err for user
+
+        print("termX--> :: Command not found !\n")
+
+
 
     else:
-
-# if cmnd is command run this
-
-        if os.system(cmnd) == 0 :
-            os.system(cmnd);
-
-# if not print err for user
-
-        else:
-            print("termX--> :: Command not found !\n")
-
+        #if TRUE
+        os.system(cmnd)
 # end
