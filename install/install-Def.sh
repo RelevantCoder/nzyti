@@ -2,7 +2,7 @@
 
 sudo apt-get install dialog
 
-dialog --menu  "      || Welocome to Zorich installer ||" 25 50 25 "->" "install Zrich to be DEFAULT shell !"
+dialog --menu  "      || Welocome to Zorich installer ||" 25 50 25 "->" "install Zrich to be your DEFAULT shell !"
 return_value=$?
 case $return_value in 
         0)
