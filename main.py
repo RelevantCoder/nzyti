@@ -8,7 +8,7 @@ import rlcompleter, readline
 # auto complete (arrow key (up & down))
 def completer(text, state):
 
-    options = [i for i in print("\n")+os.system("ls && echo ':: '") if i.startswith(text)]
+    options = [i for i in print("\n")+os.system("ls  -al && echo  '\n==> '") if i.startswith(text)]
     if state < len(options):
 
         return options
@@ -85,7 +85,7 @@ while True:
             os.system("pwd")
             continue
 
-        elif "~" in cmnd or cmnd[3:] == "":
+        elif "~" in cmnd or cmnd[2:] == " ":
             os.chdir(os.path.expanduser("~"))
             os.system("pwd")
             continue
@@ -112,15 +112,10 @@ while True:
         print("=============================\n")
 
         continue
-    elif(int(os.system(cmnd))!= 0):
-
-# if not cmnd TRUE print err for user
-
-        print("termX--> :: Command not found !\n")
-
-
 
     else:
         #if TRUE
+
         os.system(cmnd)
+        continue
 # end
