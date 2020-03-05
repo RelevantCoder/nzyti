@@ -7,9 +7,9 @@ return_value=$?
 case $return_value in 
         0)
             cd .. 
-            cp main.py ~/.zorich.py
-            echo "alias zorich=\"python3 ~/.zorich.py\"" >> ~/.bashrc
-	    echo "alias zorich=\"python3 ~/.zorich.py\"" >> ~/.zshrc
+            cp main.o  ~/.zorich.o
+            echo "alias zorich=\"~/.zorich.o\"" >> ~/.bashrc
+	    echo "alias zorich=\"~/.zorich.o\"" >> ~/.zshrc
 	    sleep 7
 	    dialog --msgbox "zorich installed !\nThank's !!!" 27 40 	    
 	    clear
