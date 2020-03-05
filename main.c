@@ -35,7 +35,7 @@ int main(){
      */
 
     char* home = getenv("HOME");
-
+    char* root = getenv("ROOT");
 
     /*
      *clear
@@ -72,21 +72,25 @@ int main(){
     puts(" /____\\___/|_| \\_\\___\\____|_| |_|          /_/ ");
     system("sleep 2");
     system("clear");
-    chdir(" ~/Desktop");
     // get command
 
     while(1){
         puts(KRED);
-        puts("  ________  ____  ___ ____ _   _           __  ");
-        puts(" |__  / _ \\|  _ \\|_ _/ ___| | | |_____ ____\\ \\ ");
-        puts("   / / | | | |_) || | |   | |_| |_____|_____\\ \\");
+        puts(" ________  ____  ___ ____ _   _           __  ");
+        puts("|__  / _ \\|  _ \\|_ _/ ___| | | |_____ ____\\ \\ ");
+        puts("  / / | | | |_) || | |   | |_| |_____|_____\\ \\");
         // prompt
+        printf("%s", KRED);
+        system("pwd");
+
         printf("%s", KWHT);
-        printf("%s\t::-->%s ", KRED, KWHT);
+        printf("%s::-->%s ", KRED, KWHT);
+        
         scanf("%s", cmnd);
         printf("%s", KRED);;
-        puts("\n  / /| |_| |  _ _ | | |___|  _  |_____|_____/ /");
-        puts(" /____\\___/|_| \\_\\___\\____|_| |_|          /_/ ");
+        
+        puts("\n / /| |_| |  _ _ | | |___|  _  |_____|_____/ /");
+        puts("/____\\___/|_| \\_\\___\\____|_| |_|          /_/ ");
         /*
         *newline
         *goto
@@ -151,12 +155,32 @@ int main(){
         // goto root {'cd /'}
 
         else if(strcmp(cmnd ,"/")==0){
-            chdir("/");
+            chdir(root);
         }
-        else if(strcmp(cmnd , "rm ")){
-          system(cmnd);
+        else if(strcmp(cmnd , "Desktop")==0 || strcmp(cmnd , "desktop")==0){
+          chdir(home);
+          chdir("Desktop");
         }
-
+        else if(strcmp(cmnd , "Documents")==0 || strcmp(cmnd , "documents")==0){
+          chdir(home);
+          chdir("Documents");
+        }
+        else if(strcmp(cmnd , "Videos")==0 || strcmp(cmnd , "videos")==0){
+          chdir(home);
+          chdir("Videos");
+        }
+        else if(strcmp(cmnd , "Templates")==0 || strcmp(cmnd , "templates")==0){
+          chdir(home);
+          chdir("Templates");
+        }
+        else if(strcmp(cmnd , "Public")==0 || strcmp(cmnd , "public")==0){
+          chdir(home);
+          chdir("Public");
+        }
+        else if(strcmp(cmnd , "Pictures")==0 || strcmp(cmnd , "pictures")==0){
+          chdir(home);
+          chdir("Pictures");
+        }
         /*
          *if
          *not
@@ -173,8 +197,8 @@ int main(){
                *goto user Directory
                *and exec the command
                */
-              chdir(cmnd);
-              system(cmnd);
+                chdir(cmnd);
+                system(cmnd);
             }
         }
     }
