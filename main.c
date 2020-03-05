@@ -30,17 +30,19 @@ int main(){
     /*
      *goto
      *home
+     *and any in (Default) Directories
      *dir
      */
 
     char* home = getenv("HOME");
 
+
     /*
      *clear
+     *the
      *terminal
      */
     system("clear");
-
     /*
      *frist
      *logo
@@ -70,7 +72,8 @@ int main(){
     puts(" /____\\___/|_| \\_\\___\\____|_| |_|          /_/ ");
     system("sleep 2");
     system("clear");
-
+    chdir(" ~/Desktop");
+    // get command
 
     while(1){
         puts(KRED);
@@ -84,10 +87,9 @@ int main(){
         printf("%s", KRED);;
         puts("\n  / /| |_| |  _ _ | | |___|  _  |_____|_____/ /");
         puts(" /____\\___/|_| \\_\\___\\____|_| |_|          /_/ ");
-        // get command
         /*
-        *goto
         *newline
+        *goto
         *puts("");
         */
 
@@ -151,6 +153,9 @@ int main(){
         else if(strcmp(cmnd ,"/")==0){
             chdir("/");
         }
+        else if(strcmp(cmnd , "rm ")){
+          system(cmnd);
+        }
 
         /*
          *if
@@ -166,11 +171,9 @@ int main(){
               /*
                *chdir()
                *goto user Directory
+               *and exec the command
                */
               chdir(cmnd);
-            }
-            else{
-
               system(cmnd);
             }
         }
