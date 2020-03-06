@@ -27,6 +27,7 @@
 
 int main(){
     char cmnd[CMND_LEN];
+    char *cmndSwp;
     /*
      *goto
      *home
@@ -42,7 +43,9 @@ int main(){
      *the
      *terminal
      */
-    system("clear");
+
+     system("clear");
+
     /*
      *frist
      *logo
@@ -51,8 +54,8 @@ int main(){
     printf("%s", KMAG);
     puts("  ________  ____  ___ ____ _   _           __  ");
     system("sleep 0.5");
-
     printf("%s",KRED);
+
     puts(" |__  / _ \\|  _ \\|_ _/ ___| | | |_____ ____\\ \\ ");
     system("sleep 0.5");
 
@@ -84,11 +87,11 @@ int main(){
         system("pwd");
 
         printf("%s", KWHT);
-        printf("%s::-->%s ", KRED, KWHT);
-        
+        printf("%s:>%s ", KRED, KWHT);
+
         scanf("%s", cmnd);
-        printf("%s", KRED);;
-        
+        cmndSwp = cmnd;
+        printf("\n%s\n%s", cmndSwp, KRED); 
         puts("\n / /| |_| |  _ _ | | |___|  _  |_____|_____/ /");
         puts("/____\\___/|_| \\_\\___\\____|_| |_|          /_/ ");
         /*
@@ -128,7 +131,10 @@ int main(){
             puts(KYEL);
             system("ls -d */ | sort");
             puts(KBLU);
+
             puts("=======================================");
+            continue;
+
         }
         /*
          *if
@@ -138,49 +144,92 @@ int main(){
          */
         else if(strcmp(cmnd , "clear") == 0){
             system("clear");
+    
+            continue;
+    
         }
 
         // cd ..
 
         else if (strcmp(cmnd , "..")==0){
             chdir("..");
+            continue;
+    
         }
 
         // goto home Directory
 
         else if(strcmp(cmnd ,"~")==0){
             chdir(home);
+            continue;
+    
         }
 
         // goto root {'cd /'}
 
         else if(strcmp(cmnd ,"/")==0){
             chdir(root);
+            continue;
+    
         }
         else if(strcmp(cmnd , "Desktop")==0 || strcmp(cmnd , "desktop")==0){
           chdir(home);
           chdir("Desktop");
+            continue;
+    
+
         }
         else if(strcmp(cmnd , "Documents")==0 || strcmp(cmnd , "documents")==0){
           chdir(home);
           chdir("Documents");
+          continue;
+    
+
         }
         else if(strcmp(cmnd , "Videos")==0 || strcmp(cmnd , "videos")==0){
           chdir(home);
           chdir("Videos");
+          continue;
+    
         }
         else if(strcmp(cmnd , "Templates")==0 || strcmp(cmnd , "templates")==0){
           chdir(home);
           chdir("Templates");
+          continue;
+    
         }
         else if(strcmp(cmnd , "Public")==0 || strcmp(cmnd , "public")==0){
           chdir(home);
           chdir("Public");
+          continue;
+    
         }
         else if(strcmp(cmnd , "Pictures")==0 || strcmp(cmnd , "pictures")==0){
           chdir(home);
           chdir("Pictures");
+          continue;
+        
         }
+        else if(strcmp(cmnd , "pwd")==0){
+          system("clear");
+          printf("%spath :> \n" ,KGRN );
+          system("pwd");
+          system("sleep 1");
+          continue;
+        }
+
+        // remove file 
+        
+        else if (strcmp(cmnd , "rm ")){
+            remove(cmnd);
+        }
+        else if (strcmp(cmnd , "mv ")){
+            char *mvCmnd; 
+            mvCmnd = cmnd;
+            mvCmnd = strcpy( cmnd , "mv ");
+            printf("\n%s\n", mvCmnd);
+        }
+        
         /*
          *if
          *not
@@ -197,8 +246,10 @@ int main(){
                *goto user Directory
                *and exec the command
                */
-                chdir(cmnd);
-                system(cmnd);
+              chdir(cmnd);
+              system(cmnd);
+              continue;
+        
             }
         }
     }
