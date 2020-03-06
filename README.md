@@ -40,7 +40,9 @@ $./installer.sh
 <br>
 <br>
 normal use  :
-$ python3  main.py
+
+$./main.o
+
 <br>
 <br>
 thank a lot for reading README.md.
