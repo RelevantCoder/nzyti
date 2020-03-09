@@ -80,8 +80,11 @@ int main(){
     while(1){
         puts(KRED);
         puts(" ________  ____  ___ ____ _   _           __  ");
+
         puts("|__  / _ \\|  _ \\|_ _/ ___| | | |_____ ____\\ \\ ");
+
         puts("  / / | | | |_) || | |   | |_| |_____|_____\\ \\");
+
         // prompt
         printf("%s", KRED);
         system("pwd");
@@ -90,10 +93,13 @@ int main(){
         printf("%s:>%s ", KRED, KWHT);
 
         scanf("%[^\n]%*c", cmnd);
-        cmndSwp = cmnd;
-        printf("\n%s\n%s", cmndSwp, KRED); 
+        
+        printf("%s", KRED);
         puts("\n / /| |_| |  _ _ | | |___|  _  |_____|_____/ /");
+
+        printf("%s", KRED);
         puts("/____\\___/|_| \\_\\___\\____|_| |_|          /_/ ");
+
         /*
         *newline
         *goto
@@ -235,16 +241,19 @@ int main(){
          */
 
         else if (strcmp(cmnd  , "cd ")){
+
+          puts(KRED);
+
           char dir[CMND_LEN];
-              puts("im in !\n");
+
               int i , n , j;
+
               j = 0;
               n = strlen(cmnd)+1;
-              printf("%d \n", n);
+
               for ( i = 3; i < n ; i++){
                   {
                     dir[j] = cmnd[i];
-                    printf("%c\n" , dir[j]);
                     j++;
                     
                   }
