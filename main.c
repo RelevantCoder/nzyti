@@ -89,7 +89,7 @@ int main(){
         printf("%s", KWHT);
         printf("%s:>%s ", KRED, KWHT);
 
-        scanf("%s", cmnd);
+        scanf("%[^\n]%*c", cmnd);
         cmndSwp = cmnd;
         printf("\n%s\n%s", cmndSwp, KRED); 
         puts("\n / /| |_| |  _ _ | | |___|  _  |_____|_____/ /");
@@ -151,27 +151,34 @@ int main(){
 
         // cd ..
 
-        else if (strcmp(cmnd , "..")==0){
+        else if (strcmp(cmnd , "..")==0 || strcmp(cmnd , "cd ..")==0){
             chdir("..");
             continue;
     
         }
-
-        // goto home Directory
-
-        else if(strcmp(cmnd ,"~")==0){
-            chdir(home);
+        else if (strcmp(cmnd , "cd .. ")==0){
+            chdir("..");
             continue;
     
         }
 
         // goto root {'cd /'}
 
-        else if(strcmp(cmnd ,"/")==0){
+        else if(strcmp(cmnd ,"/")==0 || strcmp(cmnd , "cd /")==0){
             chdir(root);
             continue;
     
         }
+
+        // goto home Directory
+
+        else if(strcmp(cmnd ,"~")==0 || strcmp(cmnd , "cd ~")==0 ){
+            chdir(home);
+            continue;
+    
+        }
+
+
         else if(strcmp(cmnd , "Desktop")==0 || strcmp(cmnd , "desktop")==0){
           chdir(home);
           chdir("Desktop");
@@ -217,18 +224,6 @@ int main(){
           system("sleep 1");
           continue;
         }
-
-        // remove file 
-        
-        else if (strcmp(cmnd , "rm ")){
-            remove(cmnd);
-        }
-        else if (strcmp(cmnd , "mv ")){
-            char *mvCmnd; 
-            mvCmnd = cmnd;
-            mvCmnd = strcpy( cmnd , "mv ");
-            printf("\n%s\n", mvCmnd);
-        }
         
         /*
          *if
@@ -239,18 +234,27 @@ int main(){
          *struct
          */
 
-        else {
-            if (strcmp(cmnd , "cd ")) {
-              /*
-               *chdir()
-               *goto user Directory
-               *and exec the command
-               */
-              chdir(cmnd);
-              system(cmnd);
-              continue;
-        
-            }
+        else if (strcmp(cmnd  , "cd ")){
+          char dir[CMND_LEN];
+              puts("im in !\n");
+              int i , n , j;
+              j = 0;
+              n = strlen(cmnd)+1;
+              printf("%d \n", n);
+              for ( i = 3; i < n ; i++){
+                  {
+                    dir[j] = cmnd[i];
+                    printf("%c\n" , dir[j]);
+                    j++;
+                    
+                  }
+                  chdir(dir);
+                    continue;
+
+              }
+              
+           system(cmnd);
+            continue;
         }
     }
 }
