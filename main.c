@@ -264,6 +264,7 @@ int main(){
               
            system(cmnd);
             continue;
+            
         }
     }
 }
