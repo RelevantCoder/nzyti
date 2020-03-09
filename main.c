@@ -27,7 +27,7 @@
 
 int main(){
     char cmnd[CMND_LEN];
-    char *cmndSwp;
+
     /*
      *goto
      *home
@@ -36,7 +36,6 @@ int main(){
      */
 
     char* home = getenv("HOME");
-    char* root = getenv("ROOT");
 
     /*
      *clear
@@ -170,8 +169,17 @@ int main(){
 
         // goto root {'cd /'}
 
-        else if(strcmp(cmnd ,"/")==0 || strcmp(cmnd , "cd /")==0){
-            chdir(root);
+        else if(strcmp(cmnd ,"/")==0){
+          chdir("/");
+          continue;
+        }
+        else if(strcmp(cmnd , "cd /")==0){
+            chdir("/");
+            continue;
+    
+        }
+        else if(strcmp(cmnd , "cd / ")==0){
+            chdir("/");
             continue;
     
         }
@@ -184,6 +192,7 @@ int main(){
     
         }
 
+        // goto Desktop
 
         else if(strcmp(cmnd , "Desktop")==0 || strcmp(cmnd , "desktop")==0){
           chdir(home);
@@ -192,6 +201,19 @@ int main(){
     
 
         }
+
+        // goto Downloads
+
+        else if(strcmp(cmnd , "Downloads")==0 || strcmp(cmnd , "downloads")==0){
+          chdir(home);
+          chdir("Desktop");
+            continue;
+    
+
+        }
+
+        // goto Documents
+
         else if(strcmp(cmnd , "Documents")==0 || strcmp(cmnd , "documents")==0){
           chdir(home);
           chdir("Documents");
@@ -199,34 +221,46 @@ int main(){
     
 
         }
+        // goto Videos
+
         else if(strcmp(cmnd , "Videos")==0 || strcmp(cmnd , "videos")==0){
           chdir(home);
           chdir("Videos");
           continue;
     
         }
+        // goto Templates 
         else if(strcmp(cmnd , "Templates")==0 || strcmp(cmnd , "templates")==0){
           chdir(home);
           chdir("Templates");
           continue;
     
         }
+        // goto Public
+
         else if(strcmp(cmnd , "Public")==0 || strcmp(cmnd , "public")==0){
           chdir(home);
           chdir("Public");
           continue;
     
         }
+        // goto pictures
+
         else if(strcmp(cmnd , "Pictures")==0 || strcmp(cmnd , "pictures")==0){
           chdir(home);
           chdir("Pictures");
           continue;
         
         }
+        // show path
+
         else if(strcmp(cmnd , "pwd")==0){
+
           system("clear");
+
           printf("%spath :> \n" ,KGRN );
           system("pwd");
+
           system("sleep 1");
           continue;
         }
@@ -235,12 +269,13 @@ int main(){
          *if
          *not
          *cmnd
-         *in
-         *up
-         *struct
+         *executeable in 
+         *Default 
          */
 
         else if (strcmp(cmnd  , "cd ")){
+            
+          system(cmnd);
 
           puts(KRED);
 
@@ -251,20 +286,14 @@ int main(){
               j = 0;
               n = strlen(cmnd)+1;
 
-              for ( i = 3; i < n ; i++){
+              for ( i = 3; i <= n ; i++){
                   {
                     dir[j] = cmnd[i];
                     j++;
-                    
+                    chdir(dir);
+                      continue;                    
                   }
-                  chdir(dir);
-                    continue;
-
               }
-              
-           system(cmnd);
-            continue;
-            
         }
     }
 }
