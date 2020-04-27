@@ -51,38 +51,43 @@ int main(){
      *loader
      */
     printf("%s", KMAG);
-    puts("  ________  ____  ___ ____ _   _           __  ");
+    puts(" _   _ _______   _______ ___ ");
     system("sleep 0.5");
     printf("%s",KRED);
 
-    puts(" |__  / _ \\|  _ \\|_ _/ ___| | | |_____ ____\\ \\ ");
+    puts("| \\ | |__  /\\ \\ / /_   _|_ _|");
     system("sleep 0.5");
 
     printf("%s", KCYN);
-    puts("   / / | | | |_) || | |   | |_| |_____|_____\\ \\");
+    puts("|  \\| | / /  \\ V /  | |  | | ");
     system("sleep 0.5");
 
-    printf("%s", KYEL);
-    puts("\tauthored by amzy-0");
-    system("sleep 0.5");
 
     printf("%s", KGRN);
-    puts("  / /| |_| |  _ _ | | |___|  _  |_____|_____/ /");
+    puts("| |\\  |/ /_   | |   | |  | | ");
     system("sleep 0.5");
 
     printf("%s", KBLU);
-    puts(" /____\\___/|_| \\_\\___\\____|_| |_|          /_/ ");
+    puts("|_| \\_/____|  |_|   |_| |___|");
+
+    system("sleep 0.8");
+    printf("%s", KYEL);
+    puts("\tauthored by amzy-0");
     system("sleep 2");
+
     system("clear");
+
     // get command
+
 
     while(1){
         puts(KRED);
-        puts(" ________  ____  ___ ____ _   _           __  ");
+        puts(" _   _ _______   _______ ___ ");
+    
+        puts("| \\ | |__  /\\ \\ / /_   _|_ _|");
 
-        puts("|__  / _ \\|  _ \\|_ _/ ___| | | |_____ ____\\ \\ ");
 
-        puts("  / / | | | |_) || | |   | |_| |_____|_____\\ \\");
+        puts("|  \\| | / /  \\ V /  | |  | | ");
 
         // prompt
         printf("%s", KRED);
@@ -94,10 +99,13 @@ int main(){
         scanf("%[^\n]%*c", cmnd);
         
         printf("%s", KRED);
-        puts("\n / /| |_| |  _ _ | | |___|  _  |_____|_____/ /");
+        puts("| |\\  |/ /_   | |   | |  | | ");
 
         printf("%s", KRED);
-        puts("/____\\___/|_| \\_\\___\\____|_| |_|          /_/ ");
+        
+        puts("|_| \\_/____|  |_|   |_| |___|");
+
+
 
         /*
         *newline
@@ -206,7 +214,7 @@ int main(){
 
         else if(strcmp(cmnd , "Downloads")==0 || strcmp(cmnd , "downloads")==0){
           chdir(home);
-          chdir("Desktop");
+          chdir("Downlaods");
             continue;
     
 
@@ -289,11 +297,14 @@ int main(){
               for ( i = 3; i <= n ; i++){
                   {
                     dir[j] = cmnd[i];
+
                     j++;
+
                     chdir(dir);
                       continue;                    
                   }
               }
+
         }
     }
 }
