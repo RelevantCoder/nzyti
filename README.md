@@ -1,31 +1,32 @@
 # LOGO
 <pre>
- ________  ____  ___ ____ _   _           __
-|__  / _ \|  _ \|_ _/ ___| | | |_____ ____\ \
-  / / | | | |_) || | |   | |_| |_____|_____\ \
- / /| |_| |  _ < | | |___|  _  |_____|_____/ /
-/____\___/|_| \_\___\____|_| |_|          /_/
+ _   _ _______   _______ ___
+| \ | |__  /\ \ / /_   _|_ _|
+|  \| | / /  \ V /  | |  | |
+| |\  |/ /_   | |   | |  | |
+|_| \_/____|  |_|   |_| |___|
+
 </pre>
 
-# zorich Terminal
+# NZYTI Terminal
 
-i wanna added very good features to this terminal and i promise to you  Zorich
+i wanna added very good features to this terminal and i promise to you  NZYTI
 can handle all UNIX likes operating system with POSIX standard  , soon.
 you can add many features if you want .
 source code is yours :) .
-if you wanna changing  Zorich please use GPL v3 .
-if you like the  Zorich , please give star to this project and support this project,
+if you wanna changing  NZYTI please use GPL v3 .
+if you like the  NZYTI , please give star to this project and support this project,
 send me your code  or  pull request and other ...
-if wanna help to Zorich project.
+if wanna help to NZYTI project.
 
 # install
 
 
-install zorich to be default shell :
+install NZYTI to be default shell :
 <br>
 $ cd install
 <br>
-$ chmod +x install-Def.sh
+$ chmod 755 install-Def.sh
 <br>
 $ ./install-Def.sh
 <br>
@@ -34,7 +35,7 @@ or install global :
 <br>
 $ cd install
 <br>
-$ chmod +x installer.sh
+$ chmod 755 installer.sh
 <br>
 $./installer.sh
 <br>
@@ -45,6 +46,8 @@ $./main.o
 
 <br>
 <br>
+
+# report a bug or somthing ! 
 thank a lot for reading README.md.
 <br>
 report a bug or send anything : amzy0zone@gmail.com
