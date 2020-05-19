@@ -214,7 +214,7 @@ int main(){
 
         else if(strcmp(cmnd , "Downloads")==0 || strcmp(cmnd , "downloads")==0){
           chdir(home);
-          chdir("Downlaods");
+          chdir("Downloads");
             continue;
     
 
